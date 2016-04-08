@@ -1,0 +1,85 @@
+<html ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formatter sample template </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+        <div>
+            <h1>Rivet TimeSince Formatter</h1>
+            <p>
+                A rivet's formatter for displaying time in facebook format: "6 minutes ago", "2 days ago", "1 week ago"
+            </p>
+            <a href="https://github.com/sanjeyac/rivet-timesince-formatter">Download source</a>
+            -
+            <a href="http://rawgit.com/sanjeyac/rivet-timesince-formatter/master/index.html">Demo page</a>
+        </div>
+        <hr />
+        <h2> Example </h2>
+        <div id="app">
+            <p>
+                <h3>Filtered text / Result</h3>
+                <blockquote>
+                    08/04/2016 15.44 is <span rv-text="now | timesince">time ago</span>
+                </blockquote>
+            </p>
+        </div>
+        <hr />
+        <div>
+            <h2>Usage</h2>
+
+<pre style='color:#000000;background:#ffffff;'>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>html</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>body</span><span style='color:#a65700; '>></span>
+        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"app"</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#a65700; '>></span>
+                <span style='color:#696969; '>&lt;!-- use the formatter --></span>
+                <span style='color:#008c00; '>08</span>/<span style='color:#008c00; '>04</span>/<span style='color:#008c00; '>2016</span> <span style='color:#008c00; '>15.44</span> is <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#274796; '> rv-</span><span style='color:#074726; '>text</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"now | timesince"</span><span style='color:#a65700; '>></span>time ago<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#a65700; '>></span>
+        <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+
+        <span style='color:#696969; '>&lt;!-- include rivets --></span>
+        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://cdnjs.cloudflare.com/ajax/libs/rivets/0.8.1/rivets.bundled.min.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+
+        <span style='color:#696969; '>&lt;!-- include the formatter --></span>
+        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"timesince.formatter.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+
+        <span style='color:#696969; '>&lt;!-- rivets init --></span>
+        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+
+            rivets<span style='color:#808030; '>.</span>bind<span style='color:#808030; '>(</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>app</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> <span style='color:#800080; '>{</span>now<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>1460123067142</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
+        <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>body</span><span style='color:#a65700; '>></span>
+
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>html</span><span style='color:#a65700; '>></span>
+</pre>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- include rivets -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.8.1/rivets.bundled.min.js"></script>
+
+    <!-- include the formatter -->
+    <script src="timesince.formatter.js"></script>
+
+    <!-- rivets init -->
+    <script>
+
+        rivets.bind( document.getElementById('app'), {now: new Date(1460123067142)})
+    </script>
+</body>
+
+</html>
